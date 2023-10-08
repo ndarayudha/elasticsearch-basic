@@ -62,3 +62,21 @@ Content-Type: application/json
     ]
 }
 
+# SEARCH API
+### Serach all products
+POST http://localhost:9200/products/_search
+
+# PAGINATION
+### Serach products page 1
+POST http://localhost:9200/products/_search?size=1&from=0
+
+### Serach products page 2
+POST http://localhost:9200/products/_search?size=1&from=1
+
+# SORTING
+### Search products sort by price asc
+POST http://localhost:9200/products/_search?sort=price:asc
+
+### Search products sort by name asc (failed)
+POST http://localhost:9200/products/_search?sort=name:asc
+
