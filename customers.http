@@ -1,0 +1,77 @@
+### Update customers mapping
+PUT http://localhost:9200/customers/_mapping
+Content-Type: application/json
+
+{
+    "date_detection" : true,
+    "dynamic_date_formats" : [
+        "yyyy-MM-dd HH:mm:ss",
+        "yyyy-MM-dd",
+        "yyyy/MM/dd HH:mm:ss",
+        "yyyy/MM/dd"
+    ]
+}
+
+### Get Mapping
+GET http://localhost:9200/customers/_mapping
+
+
+### Update customers mapping
+PUT http://localhost:9200/customers/_mapping
+Content-Type: application/json
+
+{
+    "numeric_detection": true
+}
+
+### Get Mapping
+GET http://localhost:9200/customers/_mapping
+
+
+### Create customers yofan
+POST http://localhost:9200/customers/_create/yofan
+Content-Type: application/json
+
+{
+    "name": "Yofan Niki Andara Yudha",
+    "register_at": "2023-10-07 00:00:00"
+}
+
+### Get Mapping
+GET http://localhost:9200/customers/_mapping
+
+
+### Get Customer yofan
+GET http://localhost:9200/customers/_doc/yofan
+
+### Check is exist Customer yofan
+HEAD http://localhost:9200/customers/_doc/yofan
+
+### Get Customer yofan
+GET http://localhost:9200/customers/_doc/yofan
+
+### Get Customer yofan
+GET http://localhost:9200/customers/_source/yofan
+
+
+# MULTI GET API
+### get order 1 and customer yofan
+GET http://localhost:9200/_mget
+Content-Type: application/json
+
+{
+    "docs": [
+        {
+            "_id": "1",
+            "_index": "orders"
+        },
+        {
+            "_id": "yofan",
+            "_index": "customers"
+        },
+        {
+            "_id": "1",
+            "_index": "products"
+        }
+    ]
+}

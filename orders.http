@@ -1,0 +1,56 @@
+### Update orders mapping
+PUT http://localhost:9200/orders/_mapping
+Content-Type: application/json
+
+{
+    "date_detection" : true,
+    "dynamic_date_formats" : [
+        "yyyy-MM-dd HH:mm:ss",
+        "yyyy-MM-dd",
+        "yyyy/MM/dd HH:mm:ss",
+        "yyyy/MM/dd"
+    ]
+}
+
+### Get Mapping
+GET http://localhost:9200/orders/_mapping
+
+
+
+### Update orders mapping
+PUT http://localhost:9200/orders/_mapping
+Content-Type: application/json
+
+{
+    "numeric_detection": true
+}
+
+### Get Mapping
+GET http://localhost:9200/orders/_mapping
+
+
+### Insert orders 1
+POST http://localhost:9200/orders/_create/1
+Content-Type: application/json
+
+{
+    "order_date": "2023-10-07 00:00:00",
+    "customer_id": "yofan",
+    "total": "8000",
+    "items": [
+        {
+            "product_id": "1",
+            "price": "2000",
+            "quantity": "2"
+        },
+        {
+            "product_id": "2",
+            "price": "2000",
+            "quantity": "2"
+        }
+    ]
+}
+
+### Get Mapping
+GET http://localhost:9200/orders/_mapping
+

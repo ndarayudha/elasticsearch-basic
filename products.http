@@ -1,0 +1,64 @@
+### Update products mapping
+PUT http://localhost:9200/products/_mapping
+Content-Type: application/json
+
+{
+    "date_detection" : true,
+    "dynamic_date_formats" : [
+        "yyyy-MM-dd HH:mm:ss",
+        "yyyy-MM-dd",
+        "yyyy/MM/dd HH:mm:ss",
+        "yyyy/MM/dd"
+    ]
+}
+
+### Get Mapping
+GET http://localhost:9200/products/_mapping
+
+
+### Update products mapping
+PUT http://localhost:9200/products/_mapping
+Content-Type: application/json
+
+{
+    "numeric_detection": true
+}
+
+### Get Mapping
+GET http://localhost:9200/products/_mapping
+
+
+### Create products 1
+POST http://localhost:9200/products/_create/1
+Content-Type: application/json
+
+{
+    "name": "Indomie Ayam Bawang",
+    "price": "2000"
+}
+
+### Create products 2
+POST http://localhost:9200/products/_create/2
+Content-Type: application/json
+
+{
+    "name": "Mie Sedap Soto",
+    "price": "2000"
+}
+
+### Get Mapping
+GET http://localhost:9200/products/_mapping
+
+
+# MULTI GET API
+### Multiget products
+POST http://localhost:9200/products/_mget
+Content-Type: application/json
+
+{
+    "ids": [
+        "1",
+        "2"
+    ]
+}
+
