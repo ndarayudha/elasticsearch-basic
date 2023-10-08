@@ -81,7 +81,7 @@ POST http://localhost:9200/products/_search?sort=price:asc
 POST http://localhost:9200/products/_search?sort=name:asc
 
 
-# INDEXING
+# INDEXING (REPLACE)
 ### Save product 3
 POST http://localhost:9200/products/_doc/3
 Content-Type: application/json
