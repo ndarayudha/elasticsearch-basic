@@ -1,0 +1,37 @@
+### Create customer alias
+POST http://localhost:9200/_aliases
+Content-Type: application/json
+
+{
+    "actions": [
+        {
+            "add": {
+                "index": "orders",
+                "alias": "order"
+            }
+        }
+    ]
+}
+
+
+### Create customer alias
+POST http://localhost:9200/_aliases
+Content-Type: application/json
+
+{
+    "actions": [
+        {
+            "add": {
+                "index": "customers",
+                "alias": "customer"
+            }
+        }
+    ]
+}
+
+
+### Get aliases
+GET http://localhost:9200/_aliases
+
+### get customer
+GET http://localhost:9200/customer/_search
