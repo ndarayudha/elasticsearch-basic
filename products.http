@@ -110,3 +110,19 @@ Content-Type: application/json
 
 ### Search all products
 POST http://localhost:9200/products/_search
+
+
+
+# UPDATE DOCUMENT PER ATTRIBUTE
+### Update product 1
+POST http://localhost:9200/products/_update/1
+Content-Type: application/json
+
+{
+    "doc": {
+        "price": 3000
+    }
+}
+
+### Search all products
+POST http://localhost:9200/products/_search
